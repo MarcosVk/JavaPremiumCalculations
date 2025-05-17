@@ -22,5 +22,4 @@ public class TermFactor {
 		
 		return termFactor;
 	}
-
 }
