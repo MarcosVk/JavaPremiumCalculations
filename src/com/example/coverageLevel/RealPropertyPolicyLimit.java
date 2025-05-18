@@ -1,7 +1,6 @@
 package com.example.coverageLevel;
 
 import java.util.ArrayList;
-import java.util.IllegalFormatException;
 import java.util.List;
 import java.util.Scanner;
 

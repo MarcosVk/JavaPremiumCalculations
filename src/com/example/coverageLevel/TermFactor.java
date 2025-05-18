@@ -17,7 +17,8 @@ public class TermFactor {
 		
 		long fullTermDays=ChronoUnit.DAYS.between(effDate, effPlusOneYear);
 		
-		BigDecimal termFactor=BigDecimal.valueOf(actualTermDays).divide(BigDecimal.valueOf(fullTermDays),6,RoundingMode.HALF_UP)
+		BigDecimal termFactor=BigDecimal.valueOf(actualTermDays).divide
+				(BigDecimal.valueOf(fullTermDays),6,RoundingMode.HALF_UP)
 				.setScale(3,RoundingMode.HALF_UP);
 		
 		return termFactor;
