@@ -30,13 +30,17 @@ public class FloodCoverage {
 						System.out.println("Enter flood limit: ");
 						String floodLimitInput = sc.nextLine().trim();
 						double floodLimit = Double.parseDouble(floodLimitInput);
-						BigDecimal getStateRate = stateFloodRate.get(Formattedstate);
+						if(floodLimit>=0) {
+							BigDecimal getStateRate = stateFloodRate.get(Formattedstate);
 
-						BigDecimal floodPremium = getStateRate.divide(BigDecimal.valueOf(100), 10, RoundingMode.HALF_UP)
-								.multiply(BigDecimal.valueOf(territoryFactor)).multiply(BigDecimal.valueOf(floodLimit))
-								.multiply(RMFPolicyLevel).multiply(termFactor).setScale(6, RoundingMode.HALF_UP);
-						return floodPremium;
-
+							BigDecimal floodPremium = getStateRate.divide(BigDecimal.valueOf(100), 10, RoundingMode.HALF_UP)
+									.multiply(BigDecimal.valueOf(territoryFactor)).multiply(BigDecimal.valueOf(floodLimit))
+									.multiply(RMFPolicyLevel).multiply(termFactor).setScale(6, RoundingMode.HALF_UP);
+							return floodPremium;
+						}
+						else {
+							System.out.println("Flood limit cannot be less than 0");
+						}
 					} catch (Exception e) {
 						System.out.println("Invalid format. Please enter value in numbers (eg 120000)");
 					}
